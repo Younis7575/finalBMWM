@@ -11,7 +11,7 @@ class SectionTitle extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Text(title, style: CustomStyle.sectionTitle18),
+        child: Text(title, style: CustomStyle.sectionTitle),
       ),
     );
   }

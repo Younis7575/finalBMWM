@@ -1,9 +1,8 @@
 import 'package:bmw_passes/screens/auth/login_screen.dart';
 import 'package:bmw_passes/screens/home/qe_code_scanning_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import '../auth/login_controller.dart'; // import controller
+import 'package:get/get.dart'; 
+import '../auth/login_controller.dart';  
 
 class SplashController extends GetxController
     with GetSingleTickerProviderStateMixin {

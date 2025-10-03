@@ -7,7 +7,7 @@ class InfoCard extends StatelessWidget {
   final String value;
   final Widget? leading;
 
-  const   InfoCard({
+  const InfoCard({
     super.key,
     required this.label,
     required this.value,

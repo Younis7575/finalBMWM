@@ -1,4 +1,3 @@
-
 import 'package:bmw_passes/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -46,16 +45,10 @@ class CustomStyle {
 
   /// 🔹 New styles for Profile Screen
   static TextStyle sectionTitle = GoogleFonts.plusJakartaSans(
-    fontWeight: FontWeight.w600,
-    fontSize: 16,
-    letterSpacing: 0.5,
-    color: const Color(0xFF1565C0), // Blue shade
-  );
-
-    static TextStyle sectionTitle18 = GoogleFonts.plusJakartaSans(
     fontWeight: FontWeight.w700,
-    fontSize: 18, 
-    color: CustomColor.darkBlue, // Blue shade
+    fontSize: 18,
+    letterSpacing: 0.5,
+    color: const Color(0xFF0066B1), // Blue shade
   );
 
   static TextStyle infoLabel = GoogleFonts.plusJakartaSans(

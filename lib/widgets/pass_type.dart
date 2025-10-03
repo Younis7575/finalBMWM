@@ -1,33 +1,37 @@
+import 'package:bmw_passes/constants/custom_color.dart';
+import 'package:bmw_passes/constants/custom_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../constants/custom_color.dart';
-import '../constants/custom_style.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class PassTypeRow extends StatelessWidget {
-  const PassTypeRow({super.key});
+  final String passType; // <-- new parameter
+
+  const PassTypeRow({
+    super.key,
+    required this.passType, // <-- required
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Get.width * 0.92, // 90% of screen width
-      height: Get.height * 0.07, // 7% of screen height
+      width: Get.width * 0.92,
+      height: Get.height * 0.07,
       padding: EdgeInsets.symmetric(
-        horizontal: Get.width * 0.04, // responsive horizontal padding
-        vertical: Get.height * 0.015, // responsive vertical padding
+        horizontal: Get.width * 0.04,
+        vertical: Get.height * 0.015,
       ),
       decoration: BoxDecoration(
         border: Border.all(color: CustomColor.contentText),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
             "Pass Type:",
             style: CustomStyle.infoLabel.copyWith(
               color: CustomColor.mainText,
-              fontSize: Get.width * 0.04, // responsive font size
+              fontSize: Get.width * 0.04,
             ),
           ),
           SizedBox(width: Get.width * 0.02),
@@ -43,11 +47,11 @@ class PassTypeRow extends StatelessWidget {
           SizedBox(width: Get.width * 0.02),
           Flexible(
             child: Text(
-              "BMW M Accessorized",
-              overflow: TextOverflow.ellipsis, // handle text overflow
+              passType, // ✅ yahan ab jo bhi text bhejoge wahi show hoga
+              overflow: TextOverflow.ellipsis,
               style: CustomStyle.infoLabel.copyWith(
                 color: CustomColor.mainText,
-                fontSize: Get.width * 0.04, // responsive font size
+                fontSize: Get.width * 0.04,
               ),
             ),
           ),

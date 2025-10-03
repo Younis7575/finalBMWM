@@ -1,18 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bmw.passes">
+    package="com.bmw.passes2">
 
 
     <!-- ✅ Network Access -->
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- ✅ Storage (modern Android) -->
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <!-- ✅ Only Camera Permission -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
-    <!-- ✅ Location (if your app actually needs it) -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 
     <application

@@ -8,5 +8,4 @@ class CustomColor {
   static const Color slider = Color(0xffD9D9D9);
   static const Color dot = Color(0xffE22718);
   static const Color fieldbackgroun = Color(0xffF1F4FF);
-   static const Color darkBlue = Color(0xff0066B1);
 }
