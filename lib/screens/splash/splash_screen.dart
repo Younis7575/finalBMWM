@@ -1,6 +1,6 @@
 import 'package:bmw_passes/constants/custom_color.dart';
 import 'package:bmw_passes/constants/custom_style.dart';
-import 'package:bmw_passes/screens/splash/splash_controller.dart';
+import 'package:bmw_passes/controllers/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +25,7 @@ class SplashScreen extends StatelessWidget {
                   child: Opacity(
                     opacity: controller.fadeAnimation.value,
                     child: Image.asset(
-                      "assets/images/appicon.png", // your app icon
+                      "assets/images/app_logo.jpg", 
                       width: Get.width * 0.3,
                       height: Get.width * 0.3,
                     ),

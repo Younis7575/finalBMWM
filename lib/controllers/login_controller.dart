@@ -2,7 +2,7 @@
 
 import 'dart:convert';
 import 'dart:developer';
-import 'package:bmw_passes/screens/auth/login_model.dart';
+import 'package:bmw_passes/models/login_model.dart';
 import 'package:bmw_passes/screens/auth/login_screen.dart';
 import 'package:bmw_passes/screens/home/qe_code_scanning_screen.dart';
 import 'package:flutter/material.dart';

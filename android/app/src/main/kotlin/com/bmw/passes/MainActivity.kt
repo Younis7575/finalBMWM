@@ -1,4 +1,4 @@
-package com.bmw.passes2
+package com.bmw.passes3
 
 import io.flutter.embedding.android.FlutterActivity
 

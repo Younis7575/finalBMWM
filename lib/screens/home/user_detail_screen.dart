@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../constants/custom_style.dart';
-import '../../constants/info_card.dart';
-import '../../constants/section_title.dart';
+import '../../widgets/info_card.dart';
+import '../../widgets/section_title.dart';
 import '../../widgets/pass_type.dart';
 
 class UserDetailScreen extends StatefulWidget {

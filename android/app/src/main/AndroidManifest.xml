@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bmw.passes2">
+    package="com.bmw.passes3">
 
 
     <!-- ✅ Network Access -->
@@ -11,7 +11,7 @@
 
 
     <application
-        android:label="BMWM"
+        android:label="M Pass Checker"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

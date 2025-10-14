@@ -15,7 +15,7 @@
     }
 
     android {
-    namespace = "com.bmw.passes2"
+    namespace = "com.bmw.passes3"
         compileSdk = flutter.compileSdkVersion
         ndkVersion = flutter.ndkVersion
 
@@ -41,7 +41,7 @@
 
         defaultConfig {
             // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-            applicationId = "com.bmw.passes2"
+            applicationId = "com.bmw.passes3"
             // You can update the following values to match your application needs.
             // For more information, see: https://flutter.dev/to/review-gradle-config.
             minSdk = flutter.minSdkVersion
