@@ -45,8 +45,6 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
     final size = MediaQuery.of(context).size;
     final spacing = size.height * 0.02;
 
-   
-
     String baseUrl =
         "https://spmetesting.com/assets/uploads/customers/profiles/";
     String? profilePic = userData["profile_picture"];
@@ -76,11 +74,9 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
 
               SizedBox(height: spacing),
 
-              
               Stack(
                 clipBehavior: Clip.none,
                 children: [
-              
                   Container(
                     width: 100,
                     height: 100,
@@ -93,7 +89,7 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
                       child: Image.network(
                         profileUrl,
                         fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) { 
+                        errorBuilder: (context, error, stackTrace) {
                           return Image.network(
                             "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fHww",
                             fit: BoxFit.cover,

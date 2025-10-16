@@ -25,7 +25,7 @@ class SplashScreen extends StatelessWidget {
                   child: Opacity(
                     opacity: controller.fadeAnimation.value,
                     child: Image.asset(
-                      "assets/images/app_logo.jpg", 
+                      "assets/images/app_logo.jpg",
                       width: Get.width * 0.3,
                       height: Get.width * 0.3,
                     ),
@@ -35,7 +35,7 @@ class SplashScreen extends StatelessWidget {
                 Opacity(
                   opacity: controller.fadeAnimation.value,
                   child: Text(
-                    "BMW M", // your app name
+                    "M Pass Checker", // your app name
                     style: CustomStyle.mainText,
                   ),
                 ),

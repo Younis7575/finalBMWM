@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:convert'; 
+import 'dart:convert';
 import 'dart:ui';
 import 'package:bmw_passes/constants/custom_button.dart';
 import 'package:bmw_passes/constants/custom_color.dart';
@@ -149,7 +149,7 @@ class _QrScanScreenState extends State<QrScanScreen>
     } catch (e) {
       if (mounted) {
         setState(() {
-          _isOnline = true;  
+          _isOnline = true;
         });
       }
     }
@@ -160,7 +160,7 @@ class _QrScanScreenState extends State<QrScanScreen>
     _isScreenActive = false;
     WidgetsBinding.instance.removeObserver(this);
     _connectivitySub.cancel();
-    _connectionBarTimer?.cancel(); 
+    _connectionBarTimer?.cancel();
     _animController.dispose();
     controller.dispose();
     super.dispose();
@@ -186,7 +186,7 @@ class _QrScanScreenState extends State<QrScanScreen>
         _wasOffline = false;
         _isHandlingConnection = false;
         _isOnline = true;
-        _showConnectionBar = false;  
+        _showConnectionBar = false;
         _connectionBarText = "";
         _connectionBarColor = Colors.transparent;
       });
@@ -289,7 +289,6 @@ class _QrScanScreenState extends State<QrScanScreen>
     }
   }
 
- 
   Future<void> _handleTokenExpired() async {
     if (_isProcessingLogout || _isHandlingConnection || !_isScreenActive)
       return;
@@ -516,6 +515,7 @@ class _QrScanScreenState extends State<QrScanScreen>
     const double topOffset = 170;
 
     return Scaffold(
+      backgroundColor: CustomColor.screenBackground,
       body: SafeArea(
         child: Stack(
           children: [
@@ -943,5 +943,3 @@ class ShadowSliderThumbShape extends SliderComponentShape {
     canvas.drawCircle(center, thumbRadius, thumbPaint);
   }
 }
-
- 
