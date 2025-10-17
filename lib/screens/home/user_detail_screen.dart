@@ -201,8 +201,8 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
               const SectionTitle(title: "Others"),
               PassTypeRow(
                 passType: userData["is_bmw_m_accessorized"] == 1
-                    ? "BMW M Accessorized"
-                    : "BMW M",
+                    ? "M Pass Checker Accessorized"
+                    : "M Pass Checker",
               ),
 
               Row(

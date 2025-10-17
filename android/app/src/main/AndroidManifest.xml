@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bmw.passes3">
+    package="com.mpass.checker">
 
 
     <!-- ✅ Network Access -->

@@ -15,7 +15,7 @@
     }
 
     android {
-    namespace = "com.bmw.passes3"
+    namespace = "com.mpass.checker"
         compileSdk = flutter.compileSdkVersion
         ndkVersion = flutter.ndkVersion
 
@@ -41,7 +41,7 @@
 
         defaultConfig {
             // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-            applicationId = "com.bmw.passes3"
+            applicationId = "com.mpass.checker"
             // You can update the following values to match your application needs.
             // For more information, see: https://flutter.dev/to/review-gradle-config.
             minSdk = flutter.minSdkVersion
