@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
     this.color = CustomColor.mainText, // Default: Dark Blue
     // this.textColor = CustomColor.screenBackground,
     this.borderRadius = 12,
-    this.elevation = 4,
+    this.elevation = 4, required String title, required void Function() onTap,
   });
 
   @override

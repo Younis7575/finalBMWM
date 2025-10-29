@@ -62,7 +62,7 @@ class LoginScreen extends StatelessWidget {
                         if (!controller.isLoading.value) {
                           controller.login();
                         }
-                      },
+                      }, title: '', onTap: () {  },
                     ),
                   ),
                 ],

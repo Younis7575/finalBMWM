@@ -62,4 +62,6 @@ class CustomStyle {
     fontSize: 14,
     color: Colors.black87,
   );
+
+  static get heading => null;
 }

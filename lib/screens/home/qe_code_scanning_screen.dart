@@ -289,6 +289,33 @@ class _QrScanScreenState extends State<QrScanScreen>
     }
   }
 
+  // Future<void> _handleTokenExpired() async {
+  //   if (_isProcessingLogout || _isHandlingConnection || !_isScreenActive)
+  //     return;
+
+  //   _connectionBarTimer?.cancel();
+
+  //   if (mounted) {
+  //     setState(() {
+  //       isFetching = false;
+  //       showErrorOverlay = false;
+  //     });
+  //   }
+
+  //   await Future.delayed(const Duration(milliseconds: 150));
+
+  //   if (mounted &&
+  //       !_isProcessingLogout &&
+  //       !_isHandlingConnection &&
+  //       _isScreenActive) {
+  //     setState(() {
+  //       showErrorOverlay = true;
+  //       errorTitle = "Session Expired";
+  //       errorSubtitle = "Your token has expired. Please login again.";
+  //     });
+  //   }
+  // }
+
   Future<void> _handleTokenExpired() async {
     if (_isProcessingLogout || _isHandlingConnection || !_isScreenActive)
       return;
@@ -308,6 +335,9 @@ class _QrScanScreenState extends State<QrScanScreen>
         !_isProcessingLogout &&
         !_isHandlingConnection &&
         _isScreenActive) {
+      // ❌ Stop camera when popup is shown
+      await controller.stop();
+
       setState(() {
         showErrorOverlay = true;
         errorTitle = "Session Expired";
@@ -317,6 +347,46 @@ class _QrScanScreenState extends State<QrScanScreen>
   }
 
   /// ✅ FIXED: Error dialog
+  // void _showErrorDialog(String message, {bool showLoginButton = false}) {
+  //   if (_isProcessingLogout || _isHandlingConnection || !_isScreenActive)
+  //     return;
+
+  //   _connectionBarTimer?.cancel();
+
+  //   if (mounted) {
+  //     setState(() {
+  //       showErrorOverlay = false;
+  //     });
+  //   }
+
+  //   Future.delayed(const Duration(milliseconds: 100), () {
+  //     if (mounted &&
+  //         !_isProcessingLogout &&
+  //         !_isHandlingConnection &&
+  //         _isScreenActive) {
+  //       setState(() {
+  //         showErrorOverlay = true;
+  //         errorTitle = "Verification Failed";
+  //         errorSubtitle = message;
+  //         qrResult = null;
+  //       });
+
+  //       if (!showLoginButton) {
+  //         Future.delayed(const Duration(seconds: 3), () {
+  //           if (mounted &&
+  //               !_isProcessingLogout &&
+  //               !_isHandlingConnection &&
+  //               _isScreenActive) {
+  //             setState(() {
+  //               showErrorOverlay = false;
+  //             });
+  //           }
+  //         });
+  //       }
+  //     }
+  //   });
+  // }
+
   void _showErrorDialog(String message, {bool showLoginButton = false}) {
     if (_isProcessingLogout || _isHandlingConnection || !_isScreenActive)
       return;
@@ -329,30 +399,20 @@ class _QrScanScreenState extends State<QrScanScreen>
       });
     }
 
-    Future.delayed(const Duration(milliseconds: 100), () {
+    Future.delayed(const Duration(milliseconds: 100), () async {
       if (mounted &&
           !_isProcessingLogout &&
           !_isHandlingConnection &&
           _isScreenActive) {
+        // ❌ Stop camera when popup is shown
+        await controller.stop();
+
         setState(() {
           showErrorOverlay = true;
           errorTitle = "Verification Failed";
           errorSubtitle = message;
           qrResult = null;
         });
-
-        if (!showLoginButton) {
-          Future.delayed(const Duration(seconds: 3), () {
-            if (mounted &&
-                !_isProcessingLogout &&
-                !_isHandlingConnection &&
-                _isScreenActive) {
-              setState(() {
-                showErrorOverlay = false;
-              });
-            }
-          });
-        }
       }
     });
   }
@@ -853,14 +913,43 @@ class _QrScanScreenState extends State<QrScanScreen>
                                   errorSubtitle.contains("Internet")
                               ? "OK"
                               : "Scan More",
+
                           onPressed: () async {
                             if (mounted &&
                                 !_isProcessingLogout &&
                                 !_isHandlingConnection &&
                                 _isScreenActive) {
                               setState(() => showErrorOverlay = false);
+
+                              // ✅ If session expired, logout
+                              if (errorSubtitle.contains("expired")) {
+                                await _performLogout(); // go to login screen
+                              } else {
+                                await controller.start(); // resume scanner
+                              }
                             }
                           },
+
+                          // onPressed: () async {
+                          //   if (mounted &&
+                          //       !_isProcessingLogout &&
+                          //       !_isHandlingConnection &&
+                          //       _isScreenActive) {
+                          //     setState(() => showErrorOverlay = false);
+                          //     await controller
+                          //         .start(); // ✅ Resume scanning when popup hides
+                          //   }
+                          // },
+                          title: '',
+                          onTap: () {},
+                          // onPressed: () async {
+                          //   if (mounted &&
+                          //       !_isProcessingLogout &&
+                          //       !_isHandlingConnection &&
+                          //       _isScreenActive) {
+                          //     setState(() => showErrorOverlay = false);
+                          //   }
+                          // }, title: '', onTap: () {  },
                         ),
                       ),
                     ],
