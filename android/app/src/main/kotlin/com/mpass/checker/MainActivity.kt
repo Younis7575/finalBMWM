@@ -1,4 +1,4 @@
-package com.bmw.passes3
+package com.mpass.checker
 
 import io.flutter.embedding.android.FlutterActivity
 
