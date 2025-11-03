@@ -323,10 +323,10 @@ class _QrScanScreenState extends State<QrScanScreen>
     _connectionBarTimer?.cancel();
 
     if (mounted) {
-      setState(() {
-        isFetching = false;
-        showErrorOverlay = false;
-      });
+      // setState(() {
+      //   isFetching = false;
+      //   showErrorOverlay = false;
+      // });
     }
 
     await Future.delayed(const Duration(milliseconds: 150));
@@ -394,9 +394,9 @@ class _QrScanScreenState extends State<QrScanScreen>
     _connectionBarTimer?.cancel();
 
     if (mounted) {
-      setState(() {
-        showErrorOverlay = false;
-      });
+      // setState(() {
+      //   showErrorOverlay = false;
+      // });
     }
 
     Future.delayed(const Duration(milliseconds: 100), () async {
